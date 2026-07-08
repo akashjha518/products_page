@@ -1,16 +1,45 @@
-# React + Vite
+# Custom `useFetch` Hook Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Title & Description
 
-Currently, two official plugins are available:
+This project is a React assignment about creating a custom hook called `useFetch`.
+The hook is used to fetch product data from the Escuela JS API and show it on the screen.
+It also handles loading and error states, so the UI does not break while data is coming from the API.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features Implemented
 
-## React Compiler
+- Created a custom hook named `useFetch`
+- Accepted a URL as a parameter
+- Used `fetch` to get product data from the API
+- Used `useEffect` to run the fetch when the component loads
+- Used `useCallback` to keep the fetch function in one place
+- Handled loading state with a loading message
+- Handled error state if the API request fails
+- Displayed the fetched products in cards
+- Styled the page with Tailwind CSS
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## How to Run the Project
 
-## Expanding the ESLint configuration
+1. Install the dependencies:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+```
+
+2. Start the project:
+
+```bash
+npm start
+```
+
+If `npm start` is not set up in your environment, you can also use:
+
+```bash
+npm run dev
+```
+
+## My Approach / Challenges
+
+At first, I had to think carefully about how the loading state should work because the screen should not try to show the products before the fetch is finished.
+That was a small learning moment for me, especially remembering to set the loading boolean back to `false` after the request is done.
+I also learned that error handling is important because if the network is unavailable, the hook should still show a proper message instead of crashing the page.
